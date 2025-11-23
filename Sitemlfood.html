@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ML FOOD – Le goût qui parle</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body{
+        margin:0;
+        font-family:'Poppins', sans-serif;
+        background:#080C14;
+        color:white;
+        padding-bottom:130px;
+    }
+
+    header{
+        text-align:center;
+        padding:40px 20px 20px;
+    }
+
+    .logo{
+        font-size:50px;
+        font-weight:700;
+        letter-spacing:2px;
+        color:#FF8500;
+        text-shadow:0 0 12px rgba(255,120,0,0.45);
+    }
+
+    .slogan{
+        margin-top:-8px;
+        font-size:16px;
+        font-weight:300;
+        color:#FFB367;
+        letter-spacing:1px;
+    }
+
+    /* PHRASE PROFESSIONNELLE */
+    .sub-info{
+        margin-top:10px;
+        font-size:15px;
+        font-weight:400;
+        color:#ffcf96;
+        letter-spacing:0.4px;
+    }
+
+    /* SECTION VIDEO */
+    .video-title{
+        margin:25px 0 10px 12px;
+        font-size:20px;
+        font-weight:600;
+        color:#FF8500;
+    }
+
+    .video-section{
+        margin:0 auto 30px;
+        width:90%;
+        max-width:800px;
+        border-radius:14px;
+        overflow:hidden;
+        border:1px solid rgba(255,255,255,0.08);
+        box-shadow:0 8px 18px rgba(0,0,0,0.5);
+    }
+
+    iframe, video{
+        width:100%;
+        height:450px;
+        border:0;
+        display:block;
+    }
+
+    /* TITRES DES CATÉGORIES */
+    .section-title{
+        margin:30px 0 10px 12px;
+        font-size:22px;
+        font-weight:600;
+        border-left:4px solid #FF8500;
+        padding-left:10px;
+    }
+
+    /* GRID DES PLATS */
+    .grid{
+        display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+        gap:18px;
+        padding:0 15px 20px;
+    }
+
+    .item{
+        background:rgba(255,255,255,0.04);
+        padding:0 0 15px;
+        border-radius:14px;
+        text-align:center;
+        border:1px solid rgba(255,255,255,0.07);
+        transition:0.25s;
+        overflow:hidden;
+    }
+
+    .item:hover{
+        transform:translateY(-6px);
+        box-shadow:0 10px 25px rgba(0,0,0,0.55);
+        border-color:#FF8500;
+    }
+
+    .item img{
+        width:100%;
+        height:150px;
+        object-fit:cover;
+    }
+
+    .item-name{
+        font-size:17px;
+        font-weight:600;
+        margin:10px 0 4px;
+    }
+
+    .item-desc{
+        font-size:13px;
+        color:#d0d0d0;
+        padding:0 10px;
+        min-height:38px;
+    }
+
+    .item-price{
+        margin-top:6px;
+        font-size:16px;
+        font-weight:700;
+        color:#FF8500;
+    }
+
+    /* BOUTON WHATSAPP */
+    .whatsapp-btn{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:25px;
+        width:88%;
+        max-width:780px;
+        margin:auto;
+        background:#25D366;
+        color:#062a10;
+        padding:16px;
+        text-align:center;
+        font-size:18px;
+        font-weight:700;
+        border-radius:14px;
+        text-decoration:none;
+        box-shadow:0 10px 30px rgba(0,0,0,0.45);
+    }
+    /* ========= SERVICES SECTION PREMIUM ========= */
+
+.services{
+    padding: 40px 20px 30px;
+    background: linear-gradient(180deg, #0C111B 0%, #080C14 100%);
+}
+
+.services-title{
+    font-size: 26px;
+    font-weight: 700;
+    color: #FF8500;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    border-left: 4px solid #FF8500;
+    text-shadow: 0 0 8px rgba(255,132,0,0.4);
+}
+
+.services-container{
+    display: grid;
+    gap: 22px;
+}
+
+.service-box{
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px 20px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+.service-box:hover{
+    transform: translateY(-8px);
+    border-color: #FF8500;
+    box-shadow: 0 12px 30px rgba(255,132,0,0.15);
+}
+
+.service-icon{
+    font-size: 45px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 6px rgba(255,132,0,0.5));
+}
+
+.service-name{
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffb76a;
+    margin-bottom: 8px;
+}
+
+.service-desc{
+    font-size: 15px;
+    color: #dcdcdc;
+    line-height: 1.6;
+}
+
+</style>
+</head>
+
+<body>
+    
+
+<header>
+    <div class="logo">ML FOOD</div>
+    <div class="slogan">Le goût qui parle</div>
+    <div class="sub-info">Tous ces plats à un prix abordable</div>
+</header>
+<!-- ========= NOS SERVICES (VERSION PREMIUM) ========= -->
+<section class="services">
+
+    <h2 class="services-title">✨ Nos Services</h2>
+
+    <div class="services-container">
+
+        <!-- Service 1 -->
+        <div class="service-box">
+            <div class="service-icon">🍽</div>
+            <h3 class="service-name">Service Traiteur</h3>
+            <p class="service-desc">
+                Préparation de <strong>tacos</strong>, <strong>chawarma</strong>, 
+                <strong>samoussa</strong> et <strong>sandwich</strong> pour vos 
+                fêtes, cérémonies, mariages, anniversaires et événements professionnels.
+            </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-box">
+            <div class="service-icon">🚚</div>
+            <h3 class="service-name">Livraison à Domicile</h3>
+            <p class="service-desc">
+                Livraison rapide et sécurisée disponible 
+                <strong>à partir de 10&nbsp;$ d’achat</strong>.  
+                Votre repas arrive chaud, frais et prêt à déguster.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========= SECTION VIDEO ========= -->
+<h2 class="video-title">🎥 Découvrez ML FOOD</h2>
+<div class="video-section">
+    <!-- Mets ton lien ici : YouTube, TikTok, Facebook, MP4 -->
+    <iframe 
+        src="MLFOODVIDEO.gif"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+</div>
+
+<!-- ========= PLATS TRADITIONNELS ========= -->
+ 
+<h2 class="section-title">🥘 Plats Traditionnels</h2>
+<div class="grid">
+
+    <div class="item">
+        <img src="FUFU.jpg">
+        <div class="item-name">Fufu</div>
+        <div class="item-desc">Accompagné d’une sauce riche et savoureuse.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="RIZ AU KIRKIMA.jpg">
+        <div class="item-name">Riz au curcuma</div>
+        <div class="item-desc">Riz parfumé au curcuma, doux et coloré.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="LEGUME.jpg">
+        <div class="item-name">Légumes verts</div>
+        <div class="item-desc">Légumes frais, mijotés avec soin.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="aricot.jpg">
+        <div class="item-name">Haricots</div>
+        <div class="item-desc">Haricots mijotés à l’africaine.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="POISSON GRILLEE.jpg">
+        <div class="item-name">Poisson fumé</div>
+        <div class="item-desc">Poisson fumé maison, goût authentique.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+</div>
+
+<!-- ========= GRILLADES ========= -->
+<h2 class="section-title">🍗 Grillades & Viandes</h2>
+<div class="grid">
+
+    <div class="item">
+        <img src="BROCHETTE2.jpg">
+        <div class="item-name">Brochette</div>
+        <div class="item-desc">Brochettes grillées au feu de bois.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="SAUCISSE.jpg">
+        <div class="item-name">Saucisse grillée</div>
+        <div class="item-desc">Bien grillée et assaisonnée.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="CUISSE DE POULET.jpg">
+        <div class="item-name">Cuisse de poulet</div>
+        <div class="item-desc">Poulet tendre et bien rôti.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="GESIER.jpg">
+        <div class="item-name">Gésier sauté</div>
+        <div class="item-desc">Gésiers mijotés façon ML FOOD.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+</div>
+
+<!-- ========= PLATS OCCIDENTAUX ========= -->
+<h2 class="section-title">🍝 Plats Occidentaux</h2>
+<div class="grid">
+
+    <div class="item">
+        <img src="ML SPAGHETTI.jpg">
+        <div class="item-name">Spaghetti à la viande</div>
+        <div class="item-desc">Sauce tomate maison et viande hachée.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="FRITES.jpg">
+        <div class="item-name">Frites</div>
+        <div class="item-desc">Frites croustillantes et dorées.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="BANANE PLANTAIN.jpg">
+        <div class="item-name">Banane plantain</div>
+        <div class="item-desc">Plantains frits et sucrés.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+</div>
+
+<!-- ========= SNACKS ========= -->
+<h2 class="section-title">🌯 Snacks & Takeaway</h2>
+<div class="grid">
+
+    <div class="item">
+        <img src="SAMOUSSA2.jpg">
+        <div class="item-name">Samoussa</div>
+        <div class="item-desc">Farce maison enrobée d’une pâte croustillante.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="CHAWARMA2.jpg">
+        <div class="item-name">Chawarma</div>
+        <div class="item-desc">Chawarma généreux et bien épicé.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="TACOS2.jpg">
+        <div class="item-name">Tacos</div>
+        <div class="item-desc">Tacos complet et gourmand.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+    <div class="item">
+        <img src="SANDWICH.jpg">
+        <div class="item-name">Sandwich</div>
+        <div class="item-desc">Sandwich frais et savoureux.</div>
+        <div class="item-price">BON PRIX</div>
+    </div>
+
+</div>
+
+<!-- ========= WHATSAPP ========= -->
+<a class="whatsapp-btn" href="https://wa.me/+243825743287" target="_blank">
+    Commander via WhatsApp
+</a>
+</body>
+</html>
